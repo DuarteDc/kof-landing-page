@@ -31,7 +31,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </nav>
     <section class="background animate-background"></section>
-    <header class="container-header">
+    <header class="container-header text-white">
       <div>
         <picture>
           <img
@@ -48,24 +48,27 @@ import Layout from "../layouts/Layout.astro";
           />
         </picture>
       </div>
-      <div class="absolute flex flex-col justify-center items-center z-50">
+      <div class="absolute flex flex-col justify-center items-center z-30">
         <picture>
           <img
             src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/main/top_sptop.svg"
             alt="KOF-img"
             class="w-[900px]"
+            style="transform: translate(0px, 0px); opacity: 1;"
+            loading="eager"
           />
         </picture>
         <picture>
           <img
-            src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/main/top_sptop2.svg"
+            src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/main/top_logo.svg"
             alt="THE KING OF FIGHTERS PORTAL"
             class="w-[850px]"
+            loading="eager"
           />
         </picture>
-        <div>
+        <div class="text-white bg_options_navigation relative mt-5">
           <ul
-            class="flex [&>li]:mx-4 [&>li]:font-extrabold text-lg text-white bg-black bg-opacity-80 py-3 border-b-2"
+            class="flex [&>li]:mx-4 [&>li]:font-extrabold text-lg py-2 [&>li]:transition-all [&>li]:duration-700 [&>li]:hover:ease-out"
           >
             <li class="hover:text-yellow-400">ABOUT</li>
             <li class="hover:text-yellow-400">STORY</li>
@@ -74,6 +77,17 @@ import Layout from "../layouts/Layout.astro";
             <li class="hover:text-yellow-400">e-SPORTS</li>
           </ul>
         </div>
+      </div>
+      <div class="absolute z-20 bottom-40 right-8">
+        <h3 class="font-extrabold text-lg">ORIGINAL WALLPAPER</h3>
+        <picture>
+          <img
+            src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/main/top_wp4.jpg"
+            alt="Origial wallpapers"
+            class="w-80 border-white border-2"
+            srcset=""
+          />
+        </picture>
       </div>
     </header>
     <section class="min-h-screen">ds</section>
@@ -108,7 +122,7 @@ import Layout from "../layouts/Layout.astro";
   .background::after {
     content: "";
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.628);
+    background-color: rgba(0, 0, 0, 0.779);
     width: 100%;
     min-height: 100vh;
   }
@@ -129,6 +143,64 @@ import Layout from "../layouts/Layout.astro";
       transform: scale(1.8);
     }
   }
+
+  .bg_options_navigation {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  /* .bg_options_navigation::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      #999 25%,
+      #999 75%,
+      transparent
+    );
+    background-image: -webkit-linear-gradient(
+      left,
+      transparent,
+      #999 25%,
+      #999 75%,
+      transparent
+    );
+    background-position: center;
+  } */
+
+  .bg_options_navigation::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      #999 25%,
+      #999 75%,
+      transparent
+    );
+    background-image: -webkit-linear-gradient(
+      left,
+      transparent,
+      #999 25%,
+      #999 75%,
+      transparent
+    );
+  }
+
   .animate-background {
     animation-name: background-scale;
     animation-duration: 15s;
