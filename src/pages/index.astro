@@ -3,75 +3,84 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <nav class="navbar">
-    <div class="navbar_icons">
-      <a href="/" target="_blank">
+  <main>
+    <nav
+      class="flex sticky top-0 z-50 bg-black bg-opacity-50 border-b-[1px] py-4 items-center px-4"
+    >
+      <div class="navbar_icons">
+        <a href="/" target="_blank">
+          <img
+            src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/common/toplogo_f.svg"
+            alt="THE KING OF FIGHTERS PORTAL"
+            class="w-8 mr-1"
+          />
+        </a>
         <img
-          src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/common/toplogo_f.svg"
+          src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/common/toplogo_logo.svg"
           alt="THE KING OF FIGHTERS PORTAL"
-          class="icon"
+          class="w-40"
         />
-      </a>
-      <img
-        src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/common/toplogo_logo.svg"
-        alt="THE KING OF FIGHTERS PORTAL"
-        class="icon-word"
-      />
-    </div>
-  </nav>
-  <main class="root_app">
+      </div>
+      <div class="flex items-center">
+        <p class="bg-yellow-400 text-[9px] px-5 font-bold mx-4 pt-[1px]">
+          UPDATE
+        </p>
+        <p class="text-white text-xs font-bold">
+          2023.03.01 CHARACTER DATABASE OPEN!
+        </p>
+      </div>
+    </nav>
     <section class="background animate-background"></section>
     <header class="container-header">
-      <div style="position: absolute; width: 100%; min-height: 100%;">
+      <div>
         <picture>
-          <img 
+          <img
             src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/main/top_kyo.webp"
             alt="KOF-img"
-            style="width: 450px; z-index: 20; position: absolute; left: 40px; top:40px"
+            class="w-[1200px] z-30 absolute left-2 top-11"
           />
         </picture>
         <picture>
           <img
             src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/main/top_iori.webp"
             alt="THE KING OF FIGHTERS PORTAL"
-            style="width: 450px; z-index: 10; position: absolute; top: -40px; right: 20px;"
+            class="w-[1200px] z-20 absolute right-2 -top-20"
           />
         </picture>
       </div>
-      <div class="icon_container">
+      <div class="absolute flex flex-col justify-center items-center z-50">
         <picture>
           <img
             src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/main/top_sptop.svg"
             alt="KOF-img"
-            class="icon_logo"
+            class="w-[900px]"
           />
         </picture>
         <picture>
           <img
             src="https://www.snk-corp.co.jp/es-es/games/kof-portal/img/main/top_sptop2.svg"
             alt="THE KING OF FIGHTERS PORTAL"
-            class="icon_text"
+            class="w-[850px]"
           />
         </picture>
+        <div>
+          <ul
+            class="flex [&>li]:mx-4 [&>li]:font-extrabold text-lg text-white bg-black bg-opacity-80 py-3 border-b-2"
+          >
+            <li class="hover:text-yellow-400">ABOUT</li>
+            <li class="hover:text-yellow-400">STORY</li>
+            <li class="hover:text-yellow-400">SERIES</li>
+            <li class="hover:text-yellow-400">CHARACTER DATABASE</li>
+            <li class="hover:text-yellow-400">e-SPORTS</li>
+          </ul>
+        </div>
       </div>
     </header>
+    <section class="min-h-screen">ds</section>
   </main>
 </Layout>
 
 <style>
-  .root_app {
-    overflow: hidden;
-    position: relative;
-  }
-  .navbar {
-    max-height: 40px;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.011);
-    border-bottom: thin solid #ffffff;
-    border-bottom-width: ;
-  }
   .navbar_icons {
     display: flex;
     align-items: center;
@@ -99,7 +108,7 @@ import Layout from "../layouts/Layout.astro";
   .background::after {
     content: "";
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.47);
+    background-color: rgba(0, 0, 0, 0.628);
     width: 100%;
     min-height: 100vh;
   }
@@ -126,10 +135,10 @@ import Layout from "../layouts/Layout.astro";
     animation-iteration-count: infinite;
   }
   .icon_container {
-	position: absolute;
+    position: absolute;
     display: flex;
     flex-direction: column;
-	z-index: 50;
+    z-index: 50;
   }
   .icon_logo {
     width: 350px;
@@ -142,7 +151,7 @@ import Layout from "../layouts/Layout.astro";
     height: 100px;
   }
   .container-header {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
